@@ -21,7 +21,7 @@ function EmailRow({ title, subject, description, id, time }) {
         time,
       })
     );
-    history.push("/mail")
+    history.push("/mail");
   };
 
   return (
@@ -35,7 +35,7 @@ function EmailRow({ title, subject, description, id, time }) {
           <LableImportantOutlinedIcon />
         </IconButton>
       </RowOptions>
-      <RowTitle >
+      <RowTitle>
         <h3>{title}</h3>
       </RowTitle>
       <RowMessage>
@@ -69,7 +69,6 @@ const RowOptions = styled.div`
 const RowTitle = styled.div`
   font-size: 13px;
   flex: 0.2;
-  
 `;
 const RowMessage = styled.div`
   display: flex;
@@ -77,9 +76,8 @@ const RowMessage = styled.div`
   align-items: center;
   font-size: 13px;
 
-
   > h4 {
-      max-width: 400px;
+    max-width: 400px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -40,8 +40,7 @@ function SidebarOption({ Icon, title, number, selected }) {
   `;
 
   const SidebarOptionActive = styled.div`
-
-display: flex;
+    display: flex;
     align-items: center;
     height: 40px;
     padding: 0 10px;
@@ -76,28 +75,26 @@ display: flex;
       display: inline;
     }
 
-
-
     background-color: #fcecec;
     color: #c04b37;
     font-weight: 800 !important;
   `;
 
   return (
-      <>
-    {selected ? (
+    <>
+      {selected ? (
         <SidebarOptionActive>
-        {<Icon />}
-      <h3>{title}</h3>
-      <p>{number}</p>
+          {<Icon />}
+          <h3>{title}</h3>
+          <p>{number}</p>
         </SidebarOptionActive>
-    ) : (
+      ) : (
         <SidebarOptionContainer>
-        {<Icon />}
-        <h3>{title}</h3>
-        <p>{number}</p>
-      </SidebarOptionContainer>
-    )}
+          {<Icon />}
+          <h3>{title}</h3>
+          <p>{number}</p>
+        </SidebarOptionContainer>
+      )}
     </>
   );
 }

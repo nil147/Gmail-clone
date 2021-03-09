@@ -67,9 +67,8 @@ function EmailList() {
         <Section Icon={LoaclOfferIcon} title="Promotions" color="green" />
       </EmailListSections>
       <AllEmails>
-        
-        {allMails.map(({id, data: { to, subject, message, timestamp }}) => (
-            <EmailRow
+        {allMails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
             key={id}
             title={to}
             subject={subject}
@@ -91,10 +90,8 @@ const EmailListContainer = styled.div`
   padding-bottom: 20%;
 
   &::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
-
-  
 `;
 
 const EmailListSetting = styled.div`

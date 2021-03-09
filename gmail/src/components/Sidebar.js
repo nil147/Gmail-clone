@@ -1,5 +1,5 @@
 import { Button, IconButton } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AddIcon from "@material-ui/icons/Add";
 import SidebarOption from "./SidebarOption";
@@ -15,9 +15,22 @@ import DuoIcon from "@material-ui/icons/Duo";
 import PersonIcon from "@material-ui/icons/Person";
 import { openSendMessage } from "../features/mailSlice";
 import { useDispatch } from "react-redux";
+import { db } from "../firebase";
+
 
 function Sidebar() {
   const dispatch = useDispatch();
+  const [mailCount, setMailCount] = useState("");
+
+  useEffect(() => {
+    db.collection("emails")
+      .get()
+      .then((snap) => {
+        const size = snap.size;
+        console.log(size);
+        setMailCount(size);
+      });
+  }, [db.collection("emails")]);
 
   return (
     <SidebarContainer>
@@ -31,14 +44,14 @@ function Sidebar() {
         selected={true}
         Icon={InboxIcon}
         title="Inbox"
-        number={54}
+        number={mailCount}
       />
       <SidebarOption Icon={StarIcon} title="Inbox" number={54} />
-      <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={54} />
-      <SidebarOption Icon={LableImportantIcon} title="Important" number={54} />
-      <SidebarOption Icon={NearMeIcon} title="Sent" number={54} />
-      <SidebarOption Icon={NoteIcon} title="Drafts" number={54} />
-      <SidebarOption Icon={ExoandMoreIcon} title="More" number={54} />
+      <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={103} />
+      <SidebarOption Icon={LableImportantIcon} title="Important" number={252} />
+      <SidebarOption Icon={NearMeIcon} title="Sent" number={3} />
+      <SidebarOption Icon={NoteIcon} title="Drafts" number={14} />
+      <SidebarOption Icon={ExoandMoreIcon} title="More" />
 
       <SidebarFooter>
         <SidebarFooterIcons>

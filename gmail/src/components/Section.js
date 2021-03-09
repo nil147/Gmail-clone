@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Section({ Icon, title, color, selected }) {
   const SectionContainer = styled.div`
     border-bottom: 3px solid ${color};
-    color: ${selected ? color : "gray"}; 
+    color: ${selected ? color : "gray"};
     display: flex;
     align-items: center;
     background-color: ${selected && "whitesmoke"};
@@ -14,22 +14,16 @@ function Section({ Icon, title, color, selected }) {
     min-width: 200px;
     cursor: pointer;
 
-
     > h4 {
-            font-size: 14px;
-            margin-left: 15px
-        }
-
-    &:hover {
-        background-color: whitesmoke;
-        border-width: 3px !important;
-
-        
+      font-size: 14px;
+      margin-left: 15px;
     }
 
+    &:hover {
+      background-color: whitesmoke;
+      border-width: 3px !important;
+    }
   `;
-
-
 
   return (
     <SectionContainer>
